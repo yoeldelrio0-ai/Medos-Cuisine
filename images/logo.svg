@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <!-- Red neon outer glow -->
+    <filter id="redGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="12" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- White text glow -->
+    <filter id="whiteGlow" x="-10%" y="-20%" width="120%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Subtle inner glow for background -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#1A0000"/>
+      <stop offset="60%"  stop-color="#0A0000"/>
+      <stop offset="100%" stop-color="#060000"/>
+    </radialGradient>
+    <!-- Red ring gradient -->
+    <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="85%"  stop-color="transparent"/>
+      <stop offset="100%" stop-color="rgba(255,0,0,0.5)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Outer dark glow halo -->
+  <circle cx="150" cy="150" r="148" fill="rgba(160,0,0,0.22)"/>
+
+  <!-- Main background circle -->
+  <circle cx="150" cy="150" r="142" fill="url(#bgGrad)"/>
+
+  <!-- Red neon ring — glowing -->
+  <circle cx="150" cy="150" r="136" fill="none" stroke="#FF1A1A" stroke-width="5.5"
+          filter="url(#redGlow)" opacity="0.95"/>
+
+  <!-- Secondary inner ring — thin, subtle -->
+  <circle cx="150" cy="150" r="126" fill="none" stroke="rgba(220,0,0,0.35)" stroke-width="1"/>
+
+  <!-- ♦ NEW YORK STYLE ♦ -->
+  <text x="150" y="74"
+        text-anchor="middle"
+        font-family="Impact, 'Arial Black', sans-serif"
+        font-size="13.5"
+        font-weight="400"
+        fill="#8B1010"
+        letter-spacing="3.5">&#9670; NEW YORK STYLE &#9670;</text>
+
+  <!-- MEDO'S — large, bold, white with glow -->
+  <text x="150" y="148"
+        text-anchor="middle"
+        font-family="Impact, 'Arial Black', sans-serif"
+        font-size="76"
+        font-weight="900"
+        fill="white"
+        letter-spacing="-1"
+        filter="url(#whiteGlow)">MEDO'S</text>
+
+  <!-- Italian flag stripe — centered, 3 segments -->
+  <!-- Green -->
+  <rect x="52"  y="160" width="65" height="5" rx="2.5" fill="#009246"/>
+  <!-- White -->
+  <rect x="118" y="160" width="25" height="5" rx="2.5" fill="#F4F5F0"/>
+  <!-- Red -->
+  <rect x="144" y="160" width="104" height="5" rx="2.5" fill="#CE2B37"/>
+
+  <!-- PIZZERIA -->
+  <text x="150" y="200"
+        text-anchor="middle"
+        font-family="Impact, 'Arial Black', sans-serif"
+        font-size="28"
+        font-weight="500"
+        fill="white"
+        letter-spacing="10">PIZZERIA</text>
+
+  <!-- CUISINE -->
+  <text x="150" y="224"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="13"
+        font-weight="300"
+        fill="#666666"
+        letter-spacing="7">CUISINE</text>
+</svg>
